@@ -1,5 +1,5 @@
 <h1>Profile Card Project</h1>
-<p>A sleek, modern profile card showcasing user details with social media links and a responsive design with HTML, inline CSS styling and Javascript.</p>
+<p> My first Project as an intern at HNG Tech, A sleek, modern profile card showcasing user details with social media links and a responsive design with HTML, inline CSS styling and Vanilla Javascript.</p>
 
 <ul>
 Features
