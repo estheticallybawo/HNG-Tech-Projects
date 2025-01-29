@@ -1,5 +1,5 @@
 <h1>Profile Card Project</h1>
-<p>A sleek, modern profile card showcasing user details with social media links and a responsive design.</p>
+<p>A sleek, modern profile card showcasing user details with social media links and a responsive design with HTML, inline CSS styling and Javascript.</p>
 
 <ul>
 Features
