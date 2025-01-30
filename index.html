@@ -18,7 +18,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -44,6 +44,7 @@
 
         .profile-card:hover {
             transform: translateY(-5px);
+            cursor: grabbing;
         }
 
         .profile-picture {
@@ -230,6 +231,31 @@
                 link.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
             });
         });
+
+        //used AI assitance to add smooth 3D hover effect to the Profile card
+        const card = document.querySelector(".profile-card");
+let lX = 0
+  , lY = 0;
+card.addEventListener("mousemove", e => {
+    const t = (e.clientX - innerWidth / 2) * .1
+      , o = (e.clientY - innerHeight / 2) * .1;
+    lX += (t - lX) * .2,
+    lY += (o - lY) * .2,
+    card.style.transform = `translate3d(${lX}px,${lY}px,0) rotateX(${lY / -5}deg) rotateY(${lX / 5}deg)`
+}
+),
+card.addEventListener("mouseleave", () => {
+    card.style.transform = "translate3d(0,0,0) rotateX(0) rotateY(0)"
+}
+);
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
