@@ -22,6 +22,7 @@ Clone the repository or download the files
 Open index.html in a browser
 Modify content in index.html as needed
 Replace profile.jpg with your own profile picture prefarable a png with a transparent background
+Add your Social Links
 
 <p>This portfolio-worthy work demonstrates mastery of:</p>
 <ul>
@@ -36,3 +37,4 @@ This project is open-source and free to use. Modify it as needed to fit your req
 
 Author
 Developed by Esther Bawo Tsotso with AI assistance 😊
+you can find me on X to buy me Coffee (I don't drink Coffee), @estheticallyb
