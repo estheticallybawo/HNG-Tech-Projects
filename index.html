@@ -7,12 +7,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #1ec1c7 0%, #f83ab9 100%);
+               --bg-color: #ffffff;
+               --text-color: #2d3748;
+               --social-bg: #f7fafc;
+               --border-color: #e2e8f0;
+               --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+               --primary-gradient: linear-gradient(135deg, #1ec1c7 0%, #f83ab9 100%);
             --text-dark: #2d3748;
             --text-light: #718096;
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-
-        }
+            
+               /* Dark mode variables */
+               &[data-theme="dark"] {
+                    --bg-color: #1a202c;
+                    --text-color: #e2e8f0;
+                    --social-bg: #2d3748;
+                    --border-color: #4a5568;
+                    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+               }
+          }
 
         * {
             margin: 0;
@@ -40,7 +53,11 @@
             position: relative;
             overflow: hidden;
             transition: transform 0.3s ease;
-        }
+             background: var(--bg-color);
+               box-shadow: var(--card-shadow);
+               border: 1px solid var(--border-color);
+          }
+        
 
         .profile-card:hover {
             transform: translateY(-5px);
@@ -67,6 +84,7 @@
             font-size: 1.75rem;
             color: var(--text-dark);
             margin-bottom: 0.5rem;
+            color: var(--text-color);
         }
 
         h3[data-testid="jobTitle"] {
@@ -74,6 +92,7 @@
             font-weight: 500;
             margin-bottom: 1rem;
             font-size: medium;
+            color: var(--text-color)
         }
 
         p[data-testid="shortBio"] {
@@ -81,6 +100,7 @@
             line-height: 1.6;
             margin-bottom: 1rem;
             font-size: small;
+            color: var(--text-color)
         }
 
         .location {
@@ -91,6 +111,7 @@
             color: #4a5568;
             margin-bottom: 0.5rem;
             font-size: small;
+            color: var(--text-color)
         }
 
         .social-links {
@@ -98,6 +119,8 @@
             justify-content: center;
             gap: 1rem;
             margin: 0.5rem 0;
+            color: var(--text-color);
+        
         }
 
         .social-link {
@@ -148,24 +171,103 @@
             font-size: 0.775rem;
             margin-top: 1.5rem;
             text-align: center;
+            color: var(--text-color);
         }
 
-        @media (max-width: 480px) {
-            .profile-card {
-                padding: 1.5rem;
-            }
-            
-            .profile-picture {
-                width: 120px;
-                height: 120px;
-                margin-top: 25px;
-            }
-        }
+         /* dark mode toggle button */
+          .theme-toggle {
+               position: absolute;
+               top: 20px;
+               right: 20px;
+               background: var(--social-bg);
+               width: 40px;
+               height: 40px;
+               border-radius: 50%;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               cursor: pointer;
+               transition: all 0.3s ease;
+               border: none;
+               transition: transform 0.3s ease;
+                z-index: 2;
+          }
+
+
+
+.theme-toggle:hover img {
+    transform: scale(1.1);
+}
+
+/* Hide dark icon by default */
+.theme-icon img {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    
+}
+
+.light-icon {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dark-icon {
+    opacity: 0;
+    visibility: hidden;
+}
+
+[data-theme="dark"] .light-icon {
+    opacity: 0;
+    visibility: hidden;
+}
+
+[data-theme="dark"] .dark-icon {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+          /* Mobile responsiveness improvements */
+          @media (max-width: 480px) {
+               .theme-toggle {
+                    top: 10px;
+                    right: 10px;
+               }
+
+               .profile-card {
+                    padding: 1.25rem;
+                    margin: 0 15px;
+               }
+
+               .email-button {
+                    padding: 0.6rem 1.5rem;
+               }
+          }
+
+          @media (max-width: 360px) {
+               h1[data-testid="fullName"] {
+                    font-size: 1.5rem;
+               }
+
+               .social-links {
+                    gap: 0.75rem;
+               }
+          }
+    
     </style>
 </head>
 <body>
     <div class="profile-card">
         <img data-testid="profilePicture" src="./Profile pics.png" alt="Profile" class="profile-picture">
+
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">
+                <img src="light-mode.png" class="light-icon" alt="Light mode">
+                <img src="dark-mode.png" class="dark-icon" alt="Dark mode">
+            </span>
+        </button>
+
         <div class="profile-content">
             <h1 data-testid="fullName">Esther Bawo Tsotso</h1>
             <h3 data-testid="jobTitle">Software | Frontend Engineer</h3>
@@ -232,7 +334,7 @@
             });
         });
 
-        //used AI assitance to add smooth 3D hover effect to the Profile card
+        //used AI assitance to add smooth 3D hover effect to the Profile card//
         const card = document.querySelector(".profile-card");
 let lX = 0
   , lY = 0;
@@ -247,9 +349,43 @@ card.addEventListener("mousemove", e => {
 card.addEventListener("mouseleave", () => {
     card.style.transform = "translate3d(0,0,0) rotateX(0) rotateY(0)"
 }
-);
+); 
 
+    // Dark mode functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        const htmlElement = document.documentElement;
+        const lightIcon = document.querySelector('.light-icon');
+        const darkIcon = document.querySelector('.dark-icon');
 
+        // Check localStorage and system preference
+        const savedTheme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        htmlElement.setAttribute('data-theme', savedTheme);
+
+        const updateIcons = () => {
+            const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+            lightIcon.style.display = isDark ? 'none' : 'block';
+            darkIcon.style.display = isDark ? 'block' : 'none';
+
+            // Add smooth transitions
+            lightIcon.style.opacity = isDark ? '0' : '1';
+            darkIcon.style.opacity = isDark ? '1' : '0';
+        };
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+            htmlElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            updateIcons();
+        });
+
+        // Initial setup
+        updateIcons();
+
+        // Add smooth transition for theme switch
+        document.documentElement.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+    
 
 
 
