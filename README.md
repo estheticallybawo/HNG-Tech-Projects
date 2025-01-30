@@ -2,7 +2,7 @@
 <p> My first Project as an intern at HNG Tech, A sleek, modern profile card showcasing user details with social media links and a responsive design with HTML, inline CSS styling and Vanilla Javascript.</p>
 
 <ul>
-Features
+<h3> Features</h3>
 <li>Responsive Design - Works seamlessly on mobile and desktop</li>  
 <li> Modern UI - Gradient backgrounds, smooth hover effects, and elegant typography</li>
 <li> Social Media Links - Quick access to LinkedIn, GitHub, Twitter, and Instagram</li>
@@ -20,11 +20,19 @@ Features
   <h3>Usage</h3>
 Clone the repository or download the files
 Open index.html in a browser
-Modify content in index.html and styles in styles.css as needed
-Replace profile.jpg with your own profile picture
+Modify content in index.html as needed
+Replace profile.jpg with your own profile picture prefarable a png with a transparent background
+
+<p>This portfolio-worthy work demonstrates mastery of:</p>
+<ul>
+<li>Modern CSS architecture 🎨</li>
+<li>JavaScript animation techniques 🌀</li>
+<li>Responsive design principles 📐</li>
+<li>User experience best practices 💡</li>
+</ul>
 
 <h3>License</h3>
 This project is open-source and free to use. Modify it as needed to fit your requirements.
 
 Author
-Developed by Esther Bawo Tsotso 
+Developed by Esther Bawo Tsotso with AI assistance 😊
