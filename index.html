@@ -195,37 +195,38 @@
 
 
 
-.theme-toggle:hover img {
-    transform: scale(1.1);
-}
+            .theme-toggle:hover img {
+               transform: scale(1.1);
+         }
 
-/* Hide dark icon by default */
-.theme-icon img {
-    width: 24px;
-    height: 24px;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+     /* Hide dark icon by default */
+
+    .theme-icon img {
+        width: 24px;
+        height: 24px;
+        transition: opacity 0.3s ease, transform 0.3s ease;
     
-}
+    }
 
-.light-icon {
-    opacity: 1;
-    visibility: visible;
-}
+    .light-icon {
+        opacity: 1;
+        visibility: visible;
+    }
 
-.dark-icon {
-    opacity: 0;
-    visibility: hidden;
-}
+    .dark-icon {
+        opacity: 0;
+        visibility: hidden;
+    }
 
-[data-theme="dark"] .light-icon {
-    opacity: 0;
-    visibility: hidden;
-}
+        [data-theme="dark"] .light-icon {
+        opacity: 0;
+        visibility: hidden;
+    }
 
-[data-theme="dark"] .dark-icon {
-    opacity: 1;
-    visibility: visible;
-}
+        [data-theme="dark"] .dark-icon {
+         opacity: 1;
+        visibility: visible;
+    }
 
 
           /* Mobile responsiveness improvements */
@@ -306,6 +307,7 @@
     </div>
 
     <script>
+
         // Real-time UTC display
         function updateUTCTime() {
             const options = { 
@@ -334,22 +336,22 @@
             });
         });
 
-        //used AI assitance to add smooth 3D hover effect to the Profile card//
+        // AI assitance to add smooth Parrallax effect to the card//
         const card = document.querySelector(".profile-card");
-let lX = 0
-  , lY = 0;
-card.addEventListener("mousemove", e => {
-    const t = (e.clientX - innerWidth / 2) * .1
+        let lX = 0
+         , lY = 0;
+        card.addEventListener("mousemove", e => {
+        const t = (e.clientX - innerWidth / 2) * .1
       , o = (e.clientY - innerHeight / 2) * .1;
-    lX += (t - lX) * .2,
-    lY += (o - lY) * .2,
-    card.style.transform = `translate3d(${lX}px,${lY}px,0) rotateX(${lY / -5}deg) rotateY(${lX / 5}deg)`
-}
-),
-card.addEventListener("mouseleave", () => {
-    card.style.transform = "translate3d(0,0,0) rotateX(0) rotateY(0)"
-}
-); 
+        lX += (t - lX) * .2,
+        lY += (o - lY) * .2,
+        card.style.transform = `translate3d(${lX}px,${lY}px,0) rotateX(${lY / -5}deg) rotateY(${lX / 5}deg)`
+    }
+    ),
+        card.addEventListener("mouseleave", () => {
+        card.style.transform = "translate3d(0,0,0) rotateX(0) rotateY(0)"
+    }
+    ); 
 
     // Dark mode functionality
         const themeToggle = document.querySelector('.theme-toggle');
@@ -386,10 +388,6 @@ card.addEventListener("mouseleave", () => {
         // Add smooth transition for theme switch
         document.documentElement.style.transition = 'background-color 0.3s ease, color 0.3s ease';
     
-
-
-
-
 
 
     </script>
