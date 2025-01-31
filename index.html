@@ -361,7 +361,7 @@
 
         // Check localStorage and system preference
         const savedTheme = localStorage.getItem('theme') ||
-            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light');
+            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
 
         htmlElement.setAttribute('data-theme', savedTheme);
 
