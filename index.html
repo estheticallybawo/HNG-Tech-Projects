@@ -264,8 +264,8 @@
 
         <button class="theme-toggle" aria-label="Toggle theme">
             <span class="theme-icon">
-                <img src="light-mode.png" class="light-icon" alt="Light mode">
-                <img src="dark-mode.png" class="dark-icon" alt="Dark mode">
+                <img src="dark-mode.png" class="light-icon" alt="Light mode">
+                <img src="light-mode.png" class="dark-icon" alt="Dark mode">
             </span>
         </button>
 
@@ -361,7 +361,7 @@
 
         // Check localStorage and system preference
         const savedTheme = localStorage.getItem('theme') ||
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light');
 
         htmlElement.setAttribute('data-theme', savedTheme);
 
