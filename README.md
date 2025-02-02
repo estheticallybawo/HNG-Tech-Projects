@@ -36,5 +36,5 @@ Add your Social Links
 This project is open-source and free to use. Modify it as needed to fit your requirements.
 
 Author
-Developed by Esther Bawo Tsotso with AI assistance 😊
+Developed by Esther Bawo Tsotso 😊
 you can find me on X to buy me Coffee (I don't drink Coffee), @estheticallyb
